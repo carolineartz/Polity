@@ -13,9 +13,9 @@
       <% if current_user && current_user.street_address1 %>
         <ul id="navigation-menu">
           <li class="nav-link"><a href="/users/<%= current_user.id %>">Dashboard</a></li>
-          <li class="nav-link"><a href="/legislators/<%= current_user.alderman.id %>">Meet Your Alderman</a></li>
-          <li class="nav-link"><a href="/legislations">Legislation Voices</a></li>
-          <li class="nav-link more"><a href="/wards/<%= current_user.ward.id %>">Community Connections</a>
+          <li class="nav-link"><a href="/legislators/<%= current_user.alderman.id %>">Your Alderman</a></li>
+          <li class="nav-link"><a href="/legislations">Speak Out</a></li>
+          <li class="nav-link more"><a href="/wards/<%= current_user.ward.id %>">Community</a>
           </li>
         </ul>
       <% end %>
