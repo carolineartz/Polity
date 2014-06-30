@@ -1,10 +1,23 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
 // Base Font
 $base-font-family: 'gandhi_serifregular', 'Helvetica Neue', 'Open Sans', Helvetica, Arial, sans-serif;
 $base-font-size: 18px;
 $base-line-height: 1.4;
 
-$header-fontface-thin: 'benchnineregular', 'Helvetica Neue', 'Open Sans', Helvetica, Arial, sans-serif;
-$header-fontface-thick: 'benchninebold', 'Helvetica Neue', Arial, sans-serif;
+$header-fontface-thin: 'Oswald', 'benchnineregular', 'Helvetica Neue', 'Open Sans', Helvetica, Arial, sans-serif;
+$header-fontface-thick: 'Oswald', 'Helvetica Neue', Arial, sans-serif;
 
 
 $block-title: saturate(darken($base-accent-color, 30), 30);
@@ -12,7 +25,11 @@ $block-title: saturate(darken($base-accent-color, 30), 30);
 //Font weights
 $light: 300;
 $regular: 400;
-$bold: 500;
+// $bold: 700;
+
+$sans-serif: "Oswald";
+
+// #09336f
 
 //Chicago Colors
 $dark-grey: #2a3145;
@@ -51,6 +68,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header-fontface-thick
 }
 
+h2 {
+  font-size: 2em !important;
+}
+
+.alderman-top h2 {
+  font-size: 90%;
+}
+
+
 header.navigation .navigation-menu-button.nav-menu {
   color: #e06063;
 }
@@ -59,8 +85,8 @@ header.navigation .navigation-menu-button.nav-menu {
   text-align: left;
   margin: .5em 0 .5em;
   color: $block-title;
-  font-weight: $bold;
-  font-size: 370%;
+  font-weight: 400;
+  font-size: 270%;
   margin-left: .5em;
 }
 
@@ -70,7 +96,7 @@ body {
 
 
 th {
-  font-family: benchninebold;
+  font-family: "Fjalla One";
   font-size: 160%;
   text-transform: uppercase;
 }
@@ -123,5 +149,47 @@ header.navigation {
 .voice_up a:hover {
   color: $electric-blue;
 }
+
+td {
+  font-weight:bold;
+}
+
+tr td:first-child, .tab-header-and-content a {
+  font-weight: 300;
+  text-align:left;
+  text-transform:none;
+  font-family: Oswald;
+}
+
+th {
+  text-align: left;
+}
+
+.alderman-bottom > div, .vote-feedback > div  {
+  display:inline-block;
+  float:left;
+}
+
+
+header.navigation, header.navigation a   {
+  font-family: Oswald;
+  text-transform:uppercase;
+}
+
+.bullet-content {
+  position:relative;
+  bottom:2em;
+}
+
+
+.fa-lg {
+  font-size: 2em;
+
+}
+
+.bullet-content h2 {
+  font-size: 1.8em !important;
+}
+
 
 

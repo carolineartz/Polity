@@ -1,6 +1,6 @@
 header.navigation {
   $navigation-padding: 1em;
-  $navigation-background: #BEBEBE;
+  $navigation-background: white;
 //  $navigation-background: desaturate(darken($base-accent-color, 20), 30);
 //  $navigation-color: transparentize(white, 0.3);
   $navigation-color-hover: $medium-blue;
@@ -14,15 +14,15 @@ header.navigation {
 //  $navigation-submenu-padding: 1em;
   $horizontal-bar-mode: $large-screen;
 
-  background-color: #BEBEBE;
-//  border-bottom: 1px solid darken($navigation-background, 10);
+  background-color: white;
+ border-bottom: 4px solid #09336f;
   font-family: $sans-serif;
   height: $navigation-height;
   width: 100%;
   z-index: 999;
   position: fixed;
-  font-family: $header-fontface-thin;
-  text-transform: uppercase;
+  font-family: BabelSans;
+/*   text-transfoberm: uppercase; */
   color: #2a3145;
   line-height: $navigation-height;
 
@@ -51,8 +51,8 @@ header.navigation {
     cursor: pointer;
     display: block;
     float: right;
-    font-family: $sans-serif;
-    font-weight: 700;
+    // font-family: $sans-serif;
+    font-weight: 400;
     line-height: $navigation-height;
     margin: 0;
     padding-right: 1em;
@@ -128,7 +128,6 @@ header.navigation {
 
   .active-nav-item a {
     padding-bottom: 3px;
-//    border-bottom: 1px solid $navigation-active-link-color;
   }
 
   li.more {
@@ -183,7 +182,6 @@ header.navigation {
     }
 
     &:hover {
-//      background: lighten($navigation-nav-button-background, 10);
     }
   }
 
@@ -197,11 +195,6 @@ header.navigation {
     }
 }
 
-/*
-  nav list items
-  1. side by side
-  2. needed for circle positioning
-*/
 .nav li {
   float: left; /*1*/
 }
@@ -238,97 +231,3 @@ header.navigation {
 .first {
 padding-top: 100px;
 }
-
-
-// @import '_clearfix';
-// $navigation-nav-background-color: #2a3145;
-// $dark-grey: #2a3145;
-
-// nav.navigation {
-//   @include clearfix;
-//   -webkit-font-smoothing: antialiased;
-//   background-color: $dark-grey;
-//   padding: 0 2em 0 1em;
-
-//   @include media(max-width em(510)){
-//     padding: 0;
-//   };
-
-//   ul {
-//     text-align: center;
-
-//     @include media(em(901)) {
-//       float: left;
-//       text-align: left;
-//     };
-//   }
-
-//   li {
-//     display: inline-block;
-//   }
-
-//   a {
-//     background-position: 1em center;
-//     background-repeat: no-repeat;
-//     color: #fff;
-//     display: inline-block;
-//     font-weight: bold;
-//     padding: 1em 1em 1em 3em;
-
-//     @include media(max-width em(515)) {
-//       padding: .75em .5em;
-//       text-align: center;
-//     };
-
-//     @include media(max-width em(900)){
-//       display: block;
-//     };
-
-//     &:hover {
-//       background-color: darken($navigation-nav-background-color, 10);
-//       text-decoration: none;
-//     }
-
-//     &.current {
-//       background-color: darken($navigation-nav-background-color, 5);
-//     }
-
-//     // $sites: set this to all pages we want navigation
-
-//     // @each $site in $sites {
-//     //   &.#{$site} {
-//     //     background: $dark-grey;
-//     //     background-image: url('/images/navigation-nav/#{$site}.png');
-
-//     //     @include hidpi {
-//     //       // background-image: url('/images/navigation-nav/#{$site}@2x.png');
-//     //       background-size: 20%;
-//     //     }
-
-//     //     @include media(max-width em(515)) {
-//     //       background-image: none;
-//     //     };
-//     //   }
-//     // }
-//   }
-
-//   h1 {
-//     color: rgba(#fff, .6);
-//     float: right;
-//     font-size: 1em;
-//     line-height: 1;
-//     margin-bottom: 0;
-
-//     @include media(max-width em(900)){
-//       display: none;
-//     };
-
-//     a {
-//       padding: 1em 0;
-
-//       &:hover {
-//         background-color: transparent;
-//       }
-//     }
-//   }
-// }

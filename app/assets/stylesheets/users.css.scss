@@ -52,22 +52,6 @@
 
     }
 
-
-  //   @for $i from 1 to 8 { // assign colors from $grid-item-colors list
-  //     &:nth-child(#{$i}) {
-  //       $background-from-list: nth($grid-item-colors, $i);
-  //       background-color: white;
-  //       box-shadow: inset 0px 0px 1px 2px darken(#efefef, 10);
-  //       &:hover {
-  //         background-color: darken($background-from-list, 10);
-  //         background-repeat: no-repeat;
-  //         background-position: top;
-  //         background-size: cover;
-  //       }
-  //     // }
-  //   }
-  // }
-
   .grid-item img {
       display: inline-block;
       height: 8em;
@@ -104,10 +88,6 @@
       text-align:left;
       color: $dark-grey;
       padding-top: 2em;
-
-      // @include media($medium-screen) {
-      //   max-width: 70%;
-      // }
     }
 
   .grid-item-big {
@@ -135,9 +115,6 @@
     }
     p {
       clear:both;
-      // @include media($medium-screen) {
-      //   max-width: 60%;
-      // }
     }
   }
 
@@ -174,14 +151,12 @@
   }
 }
 
-// .alderman-top {
-//   // border-bottom: 4.5px solid #89b7f3 !important;
-//   border-left: 0 !important;
-//   border-right: 0 !important;
-// }
-// .alderman-bottom {
-//   border-top: 4.5px solid #89b7f3;
-//   border-left: 0 !important;
-//   border-right: 0 !important;
-// }
+.alderman-connect {
+  text-transform: none;
+  clear: both;
+  text-align: center;
+  background: #4a93f3;
+  color: white;
+  padding: .2em;
+}
 
