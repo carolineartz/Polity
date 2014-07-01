@@ -11,7 +11,9 @@ class LegislatorsController < ApplicationController
   # GET /legislators/1.json
   def show
     @recently_sponsored = @legislator.sponsored_legislations.order('opened_date DESC').limit(5)
-    @recently_voted = @legislator.voted_legislations.order('opened_date DESC').limit(10)
+    # @recently_voted = @legislator.voted_legislations.order('opened_date DESC').limit(10)
+   @legislations_supported = @legislator.supported_legislations #array
+   @legislations_opposed = @legislator.opposed_legislations
   end
 
   # GET /legislators/new

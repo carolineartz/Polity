@@ -28,9 +28,9 @@ class Legislation < ActiveRecord::Base
 
     unless user_voice.empty?
       if user_voice.last == true
-        return "#{((support/total.to_f)*100).round(2)}% Agree with You."
+        return "#{((support/total.to_f)*100).round(2)}%"
       else
-        return "#{((oppose/total.to_f)*100).round(2)}% Agree with You."
+        return "#{((oppose/total.to_f)*100).round(2)}%"
       end
     end
   end

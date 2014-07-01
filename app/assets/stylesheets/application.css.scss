@@ -21,7 +21,6 @@
 @import 'base/base';
 @import 'partials/clearfix';
 @import 'fonts/fonts';
-@import 'fonts/font-awesome';
 @import 'typography-colors';
 @import 'layout';
 @import 'partials/nav';
@@ -33,6 +32,10 @@
 @import 'wards';
 @import 'users';
 @import 'legislations';
-@import 'community_meetings'
-
+@import 'community_meetings';
+@import 'legislators';
+@import 'partials/form';
+@import 'jquery-ui';
+@import 'partials/segment';
+@import 'devise'
 

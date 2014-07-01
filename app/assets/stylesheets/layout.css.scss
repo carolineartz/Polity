@@ -1,3 +1,5 @@
+
+
 header {
   h1 {
     float: left;
@@ -10,18 +12,18 @@ header {
 
 section {
   @include outer-container;
-  text-align: center;
-  margin-bottom: 3em;
+  // text-align: center;
+  margin-bottom: 1em;
 
   & > code, code.block {
     display: block;
   }
 
   div {
-    height: $base-line-height*4;
-    line-height: $base-line-height;
+    // height: $base-line-height*4;
+    // line-height: $base-line-height;
     text-align: left;
-    padding: 1em;
+    // padding: 1em;
   }
 
   &.zero {
