@@ -1,4 +1,4 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome);
+// @import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome);
 
 /* entypo */
 [class*="entypo-"]:before {
@@ -12,12 +12,13 @@
 
 
 // Base Font
-$base-font-family: 'gandhi_serifregular', 'Helvetica Neue', 'Open Sans', Helvetica, Arial, sans-serif;
+$base-font-family: "Source Serif Pro", 'gandhi_serifregular', 'Helvetica Neue', 'Open Sans', Helvetica, Arial, sans-serif;
 $base-font-size: 18px;
 $base-line-height: 1.4;
 
 $header-fontface-thin: 'Oswald', 'benchnineregular', 'Helvetica Neue', 'Open Sans', Helvetica, Arial, sans-serif;
 $header-fontface-thick: 'Oswald', 'Helvetica Neue', Arial, sans-serif;
+$icons: 'WebHostingHub-Glyphs';
 
 
 $block-title: saturate(darken($base-accent-color, 30), 30);
@@ -27,14 +28,22 @@ $light: 300;
 $regular: 400;
 // $bold: 700;
 
-$sans-serif: "Oswald";
+$sans: "Source Sans Pro";
+$sans-serif: "Source Serif Pro";
+$font-all-caps: "Novecento sans wide";
+$h1-script: "Dustismo Roman";
 
 // #09336f
 
 //Chicago Colors
 $dark-grey: #2a3145;
-$chicago-red: #f03b3c;
-$chicago-blue: #69b1d6;
+$chicago-red: #fa0d1b;
+$chicago-blue: #477dca;
+$peach: #fd7c54;
+$champaign: #f0ece4;
+$lightblue: #bad4e0;
+$brightblue: #4648ff;
+
 
 //accents
 $body-grey: #798291;
@@ -65,7 +74,7 @@ $base-border-radius: em(.5);
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   text-transform: uppercase;
-  font-family: $header-fontface-thick
+  font-family: $header-fontface-thick;
 }
 
 h2 {
@@ -151,14 +160,13 @@ header.navigation {
 }
 
 td {
-  font-weight:bold;
+  // font-weight:300;
 }
 
 tr td:first-child, .tab-header-and-content a {
-  font-weight: 300;
   text-align:left;
   text-transform:none;
-  font-family: Oswald;
+  // font-family: $base-font-family;
 }
 
 th {
@@ -172,7 +180,7 @@ th {
 
 
 header.navigation, header.navigation a   {
-  font-family: Oswald;
+  font-family: $font-all-caps;
   text-transform:uppercase;
 }
 
@@ -192,4 +200,47 @@ header.navigation, header.navigation a   {
 }
 
 
+.display-icon {
+  font-family: $icons;
+}
 
+footer {
+  clear: both;
+}
+
+.sidebar-blue {
+  background: $lightblue;
+}
+
+.sub-head {
+  // border-bottom: 4px solid #fd7c54;
+  line-height: 1.1em;
+  margin-bottom: .3em;
+  color: $chicago-blue;
+  // font-weight: 300;
+  font-size: 1.6em;
+  font-family: $font-all-caps;
+  text-transform: lowercase;
+}
+
+h1 .script {
+  font-size: .6em;
+  font-style: italic;
+  font-family: $h1-script;
+  text-transform: none;
+
+}
+
+label {
+  font-family: $sans;
+  font-weight: normal;
+}
+
+input {
+  font-size: 15px !important;
+}
+
+.form-container {
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}

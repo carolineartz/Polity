@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
     puts "here--------------------"
     puts legislation.id
     voice = LegislationVoice.where(user_id: self.id, legislation_id: legislation.id).last.support
-    voice ? (return "Yay") : (return "Nay")
+    voice ? (return "Y") : (return "N")
   end
 
 

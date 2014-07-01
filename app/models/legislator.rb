@@ -19,8 +19,31 @@ class Legislator < ActiveRecord::Base
 
   def return_legislation_vote(legislation_id)
     vote = LegislatorVote.where(legislation_id: legislation_id, legislator_id: self.id).first.vote
-    vote == "Y" ? (return "Yay") : (return "Nay")
+    vote == "Y" ? (return "Y") : (return "N")
   end
+
+  def supported_legislations
+   supported_legislation_ids = LegislatorVote.where(legislator_id: self.id, vote: "Y").pluck(:legislation_id)
+
+   Legislation.where(id: supported_legislation_ids)
+  end
+
+  def opposed_legislations
+    opposed_legislation_ids = LegislatorVote.where(legislator_id: self.id, vote: "N").pluck(:legislation_id)
+    Legislation.where(id: opposed_legislation_ids)
+  end
+
+  def count_supported
+    supported_legislations.length
+  end
+
+  def count_opposed
+    opposed_legislations.length
+  end
+
+
 end
+
+
 
 # response = Net::HTTP.get_response("example.com","/?search=thing&format=json")

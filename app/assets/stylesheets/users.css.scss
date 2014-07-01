@@ -1,162 +1,118 @@
-@mixin grid-item-columns($columns) {
-  width: (100% / 12) * $columns;
-}
-
-.grid-items {
-  // $grid-items-background: $base-body-color;
-  $grid-items-background: white;
-  // border: 1px solid #ededed;
-  $grid-item-background: white;
-  $grid-item-background: desaturate(white, 95);
-  $grid-item-colors:
-    desaturate(#979EA0, 10),
-    white,
-    white,
-    white,
-    white,
-    white,
-    white;
-
-  $grid-item-border-size: 9px;
-  $grid-item-columns: 4;
-  $grid-item-big-columns: 8;
-  $grid-item-color: darkgray ;
-  $grid-item-height: 14em;
-
-  @include clearfix;
-
-  .grid-item {
-    @include transition (all 0.2s ease-in-out);
-    height: $grid-item-height;
-    background: transparent;
-    width: 100%;
-    overflow: hidden;
-    float: left;
-    padding: .5em;
-    border-top: 0;
-    border-bottom: $grid-item-border-size solid $grid-items-background;
-    border-left: $grid-item-border-size /2 solid $grid-items-background;
-    border-right: $grid-item-border-size /2 solid $grid-items-background;
-    text-align: center;
-    cursor: default;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    background-color: white;
-
-
-      @include media($large-screen) {
-      @include grid-item-columns($grid-item-columns);
-      }
-
-
+.main-content {
+  @include outer-container;
+  // @include span-columns(12);
+  .user-info {
+    @include span-columns(4 of 12);
+     @include pad(0 0 0 25.453125px);
+    @include media(max-width 769px) {
+      @include span-columns(12 of 12);
     }
-
-  .grid-item img {
-      display: inline-block;
-      height: 8em;
-      margin: auto;
-      margin-bottom: 1em;
-      float:left;
+    .user-address {
+      line-height: 1.4em;
     }
-
-  .grid-item h1 {
-      color: $grid-item-color;
-      font-size: 1.3em;
-      margin-bottom: .4em;
+    .user-photo, .sub-head, .user-address {
+      @include span-columns(2 of 4);
     }
-
-    .user-info h3 {
-
-    }
-
-    .grid-item .user-info, .grid-item .alderman-info {
-      text-align:left;
-      float:left;
-      padding: 0 0 0 .5em;
-      clear: right;
-      margin-bottom: 1em;
-    }
-
-    .grid-item h5 {
-      margin-top: .5em;
-      margin-bottom: 0;
-    }
-
-  .grid-item p {
-      margin: auto;
-      text-align:left;
-      color: $dark-grey;
-      padding-top: 2em;
-    }
-
-  .grid-item-big {
-    @include media($large-screen) {
-      @include grid-item-columns($grid-item-big-columns);
-      // @include omega;
-      // background: #89b7f3;
-      padding-left: 1em;
-    }
-    p {
-      @include media($medium-screen) {
-        max-width: 60%;
-      }
-    }
-  }
-
-
-    .grid-item-big-tall {
-    @include media($large-screen) {
+    .sub-head, .user-address {
       @include omega;
-      height: 56em;
-      border-right: 1px solid #dddddd;
-      padding-right: 1em;
+    }
+    .update-info {
+      clear: both;
+      font-size: 90%;
+      line-height: 1.3em;
+      font-style:italic;
+      color: #7a7f92;
+    }
+    .voice-support {
+      border: 2px solid #4eb2e0;
+      padding: 10px;
+      margin-top: 20px;
+      h5 {
+        margin-bottom: 10px;
+      }
+      .legislation-content {
+        font-family: $sans;
+        line-height: 1.4em;
+      }
+      .vote {
+        text-align: center;
+
+        #vote-up, #vote-down {
+          font-family: $icons;
+          color: #a0db09;
+          font-size: 40px;
+        }
+        #vote-down {
+          color: #fc3822;
+          margin-left: 10px;
+        }
+      }
 
     }
-    p {
-      clear:both;
+  }
+  .alderman {
+      @include span-columns(8 of 12);
+      @include omega;
+      @include pad(0 0 0 25.453125px);
+      @include media(max-width 769px) {
+        @include span-columns(12 of 12);
+        border: none;
+      }
+      border-left: 1px solid #dddddd;
+    .alderman-info {
+      .address {
+        @include span-columns(4 of 8);
+        line-height: 1.4em;
+        .user-photo, .sub-head, .user-address {
+        @include span-columns(2 of 4);
+        }
+        .sub-head, .user-address {
+          @include omega;
+        }
+
+        .links {
+          clear: both;
+          padding: 10px;
+          border: 2px solid #4eb2e0;
+          top: 2em;
+          display: block;
+          position: relative;
+          font-family: $sans;
+          h5 {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
     }
-  }
+    .alderman-connect {
+      @include span-columns(4 of 8);
+      @include omega;
+
+      .social-links {
+        @include span-columns(1 of 4);
+      }
+      .twitter-activity {
+        @include span-columns(3 of 4);
+        @include omega;
+      }
+    }
 
 
 
 
-  .grid-item-image {
-    background: url(/images/lake-transparent.png);
-    background-color: $grid-item-background;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-  }
-}
+  //   .activity-feedback {
+  //     @include media(max-width 769px) {
+  //       @include span-columns(12 of 12);
+  //     }
+  //     .user-voice {
+  //       @include span-columns(4 of 8);
+  //     }
+  //     .alderman-activity {
+  //       @include span-columns(4 of 8);
+  //       @include omega;
+  //     }
+  // }
 
-
-.alderman-wrapper {
-  padding-top: 0;
-  float: left;
-  h3.alderman-info {
-    text-align:left;
-    padding-left: 0 !important;
-    margin-bottom:0 !important;
-    // clear: right;
-  }
-  img {
-    clear:left;
-    padding-right: 5px;
-    margin-bottom: 3em !important;
-  }
-
-  li:last-child {
-    font-family: $header-fontface-thick;
   }
 }
-
-.alderman-connect {
-  text-transform: none;
-  clear: both;
-  text-align: center;
-  background: #4a93f3;
-  color: white;
-  padding: .2em;
-}
-
