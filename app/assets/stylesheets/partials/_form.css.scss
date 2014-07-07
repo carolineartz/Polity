@@ -716,7 +716,8 @@
 }
 
 select {
-   width: 200px;
+   // width: 200px;
+   width: auto;
 }
 
 .form-container {
@@ -732,6 +733,64 @@ select {
       @include media(max-width 769px) {
          @include span-columns(12 of 12);
          @include shift(0);
+      }
+   }
+}
+
+.ui-selectmenu-button span.ui-selectmenu-text {
+   padding: .2em;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+   background: #75a4e9;
+   color: white;
+   font-family: $sans;
+   font-weight: normal;
+   border: none;
+}
+
+.dataTables_wrapper label {
+   font-family: $font-all-caps;
+   vertical-align: top;
+}
+
+.dataTables_wrapper table {
+   font-family: $sans;
+}
+
+.dataTables_wrapper {
+   max-width: 100%;
+}
+
+@media (min-width: 981px) {
+   .dataTables_wrapper table {
+      max-width: 900px;
+   }
+}
+
+@media (min-width: 720px) and (max-width: 980px) {
+   .dataTables_wrapper table {
+      width: 700px;
+      th:first-child {
+         width: 40%;
+      }
+   }
+}
+
+@media (min-width: 551px) and (max-width: 719px) {
+   .dataTables_wrapper table {
+      width: 550px;
+      th:first-child {
+         width: 40%;
+      }
+   }
+}
+
+@media (max-width: 550px) {
+   .dataTables_wrapper table {
+      width: 450px;
+      th:first-child {
+         width: 25%;
       }
    }
 }

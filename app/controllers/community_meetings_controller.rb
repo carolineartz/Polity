@@ -1,5 +1,6 @@
 class CommunityMeetingsController < ApplicationController
   before_action :set_community_meeting, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /community_meetings/1
   def show

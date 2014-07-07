@@ -1,5 +1,6 @@
 class WardsController < ApplicationController
   before_action :set_ward, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /wards
   # GET /wards.json
@@ -31,10 +32,8 @@ class WardsController < ApplicationController
     respond_to do |format|
       if @ward.save
         format.html { redirect_to @ward, notice: 'Ward was successfully created.' }
-        format.json { render :show, status: :created, location: @ward }
       else
         format.html { render :new }
-        format.json { render json: @ward.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,10 +44,8 @@ class WardsController < ApplicationController
     respond_to do |format|
       if @ward.update(ward_params)
         format.html { redirect_to @ward, notice: 'Ward was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ward }
       else
         format.html { render :edit }
-        format.json { render json: @ward.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,7 +56,6 @@ class WardsController < ApplicationController
     @ward.destroy
     respond_to do |format|
       format.html { redirect_to wards_url, notice: 'Ward was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

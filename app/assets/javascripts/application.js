@@ -11,17 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-// require jquery-ui.all
-//= require jquery_ujs
+// require jquery
+//= require jquery-ui.min
 //= require polity
 //= require legislations
-//= require navigation
 //= require accordian
 //= require users
 //= require legislators
+//= require navigation
 //= require_tree .
-//= require jquery
-//= require jquery-ui.min
+
 
 
 

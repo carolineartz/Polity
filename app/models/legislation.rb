@@ -1,6 +1,7 @@
 class Legislation < ActiveRecord::Base
   has_many :legislation_voices
   has_many :legislation_votes
+  # attr_accssible :title
 
   def voices_by_ward(ward_id)
     ward = Ward.find(ward_id)
@@ -12,6 +13,7 @@ class Legislation < ActiveRecord::Base
     voices_by_ward(ward_id).length
   end
 
+  #TODOS: could use merge?
   def ward_legislation_support(ward_id)
     support = voices_by_ward(ward_id).each_with_object([]) do |voice, supporters|
       supporters << voice if voice.support == true
@@ -35,4 +37,11 @@ class Legislation < ActiveRecord::Base
     end
   end
 
+  def self.search(search)
+      if search
+        where('title LIKE ?', "%#{search}%")
+      else
+        Legislation.none
+      end
+  end
 end

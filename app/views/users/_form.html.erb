@@ -1,13 +1,13 @@
 <div class="ui blue error inverted form segment">
-<%= form_for(@user) do |f| %>
+  <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-   <div class="ui error message">
-      <div class="header"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</div>
-      <ul><% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <div class="ui error message">
+    <div class="header"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</div>
+    <ul><% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
@@ -18,12 +18,8 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
-  <!-- <div class="field">
-    <%#= f.label :user_address_id %><br>
-    <%#= f.text_field :user_address_id %>
-  </div> -->
   <div class="ui blue submit button"><%= f.submit %></div>
-<% end %>
+  <% end %>
 </div>
 
 

@@ -4,7 +4,7 @@
     <%= link_to image_tag("/assets/logos/polity_logo_bg.png"), root_path, class: "logo" %>
     <p class="navigation-menu-button nav-menu" id="js-mobile-menu">MENU</p>
       <% if user_signed_in? %>
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "navigation-menu-button" %>
+        <%= link_to "Log Out", destroy_user_session_path, remote: true, method: :delete, class: "navigation-menu-button" %>
       <% else %>
         <%= link_to "Register", new_user_registration_path, class: "navigation-menu-button" %>
         <%= link_to "Sign In", new_user_session_path, class: "navigation-menu-button" %>
@@ -20,8 +20,5 @@
         </ul>
       <% end %>
     </div>
-<!--     <div class="navigation-tools">
-
-    </div> -->
   </div>
 </header>

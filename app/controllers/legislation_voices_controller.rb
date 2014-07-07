@@ -1,7 +1,8 @@
 class LegislationVoicesController < ApplicationController
   before_action :set_legislation_voice, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
-def up
+  def up
     @legislator = Legislator.find_by(alderman_id:current_user.alderman.id)
     @user_feedback = @legislator.voted_legislations.order('opened_date DESC').limit(5).sample
     @legislator_vote = @legislator.issue_vote(@user_feedback.id)
@@ -54,4 +55,4 @@ def up
     def legislation_voice_params
       params.require(:legislation_voice).permit(:user_id, :legislation_id, :support, :feedback)
     end
-end
+  end
