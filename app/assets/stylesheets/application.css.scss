@@ -13,6 +13,10 @@
  * require_tree .
  * require_self
  * require application
+ * require jquery
+ *= require jquery-ui.min
+ *= require jquery-ui-theme
+
  */
 @import "bourbon";
 @import "base/grid-settings";
@@ -34,6 +38,6 @@
 @import "community_meetings";
 @import "legislators";
 @import "partials/form";
-@import "jquery-ui";
 @import "partials/segment";
 @import "devise";
+@import "partials/modal";

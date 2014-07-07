@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  #TODOS: do we need this or can i delete it?
   # def after_sign_in_path_for(user)
   #   sign_in_url = url_for(:action => "new", :controller => "sessions", :only_path => false, :protocol => "http")
   #   if request.referer == sign_in_url
@@ -16,6 +17,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     user_path(resource)
   end
-  
+
 
 end
