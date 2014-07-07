@@ -3,27 +3,6 @@ source "http://rubygems.org"
 
 # gemspec
 
-# # used by the dummy application
-# gem 'rails', '3.1.0'
-# gem 'json'
-# gem 'coffee-rails', "~> 3.1.0"
-# gem 'haml-rails'
-
-# # used by test rails apps
-# gem 'sqlite3'
-# gem 'sass-rails', "~> 3.1.0"
-# gem 'uglifier'
-# gem 'jquery-rails'
-# gem 'turn', :require => false, :group => :test
-
-# group :development, :test do
-#   gem "rspec-rails"
-
-#   gem "aruba"
-# end
-
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
@@ -98,10 +77,7 @@ gem 'twilio-ruby'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
-  # gem 'jasmine'
-  # gem 'jasminerice', :git => 'https://github.com/bradphelan/jasminerice.git'
   gem 'coveralls', require: false
-  # gem 'cucumber-rails', :require => false
   gem "capybara"
   gem 'faker'
   gem 'better_errors'
@@ -109,7 +85,7 @@ group :development, :test do
   # gem 'annotate'
   # gem 'rack-mini-profiler'
   # gem 'railroady'
-  # gem 'pry-rails'
+  gem 'pry-rails'
 end
 
 
@@ -123,11 +99,7 @@ end
 group :development do
   gem 'quiet_assets'
   gem 'activerecord-import'
-  # gem 'guard'
-  # gem 'guard-rspec'
   gem 'rb-fsevent'
-  # gem "growl"
-  # gem "growlnotify"
 end
 
 
