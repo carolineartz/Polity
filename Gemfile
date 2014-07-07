@@ -10,9 +10,9 @@ gem 'pg'
 # gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
-gem 'bourbon'
-gem 'neat'
-gem 'bitters'
+# gem 'bourbon'
+# gem 'neat'
+# gem 'bitters'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -85,7 +85,7 @@ group :development, :test do
   # gem 'annotate'
   # gem 'rack-mini-profiler'
   # gem 'railroady'
-  gem 'pry-rails'
+  # gem 'pry-rails'
 end
 
 
@@ -93,13 +93,13 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-  gem 'launchy'
+  # gem 'launchy'
 end
 
 group :development do
-  gem 'quiet_assets'
-  gem 'activerecord-import'
-  gem 'rb-fsevent'
+  # gem 'quiet_assets'
+  # gem 'activerecord-import'
+  # gem 'rb-fsevent'
 end
 
 
