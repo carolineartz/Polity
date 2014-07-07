@@ -66,17 +66,17 @@
       @include transition(opacity 0.25s ease);
       border-radius: $base-border-radius;
       background: $modal-background;
-      margin: auto;
+      margin: 0 auto;
       max-height: 95%;
       position: relative;
-      overflow: auto;
+      overflow: hidden;
       width: 95%;
       padding: $modal-padding / 2;
       margin-top: .6em;
       @include media($medium-screen) {
          padding: $modal-padding;
          width: 60%;
-         max-height: 60%;
+         // max-height: 60%;
          margin-top: 10em;
       }
 
@@ -123,7 +123,15 @@
       visibility: visible;
    }
    .modal-state:checked + .modal-window .modal-inner {
-      top: 0;
+      top: 20px;
+   }
+}
+
+.medium-form {
+   .modal-inner {
+      height: 840px;
+      width: 850px;
+      padding: 0;
    }
 }
 
