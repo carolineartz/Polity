@@ -8,10 +8,9 @@ module LegislationsHelper
       Legislation.where("status = ?", "Voted")
   end
 
-  def paginate_legislations(legislations)
-    displayed_legislations = legislations.pluck
-
-    will_paginate(legislations.paginate(page: params[:page], per_page: 8))
+  def user_voice(legislation)
+    LegislationVoice.find_by(user_id: current_user.id, legislation_id: legislation.id)
   end
+
 
 end

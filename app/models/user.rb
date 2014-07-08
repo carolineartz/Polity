@@ -81,6 +81,10 @@ class User < ActiveRecord::Base
     voice ? (return "Y") : (return "N")
   end
 
+  def legislation_voices
+    LegislationVoice.where(user_id: self.id)
+  end
+
 
   def legislation_supporter?(legislation)
     if LegislationVoice.where("user_id = ? AND legislation_id = ? AND support = ?", self.id, legislation.id, true).empty?

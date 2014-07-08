@@ -2,13 +2,11 @@ class UserAddressesController < ApplicationController
   before_action :set_user_address, only: [:show, :edit, :update, :destroy]
 
   # GET /user_addresses
-  # GET /user_addresses.json
   def index
     @user_addresses = UserAddress.all
   end
 
   # GET /user_addresses/1
-  # GET /user_addresses/1.json
   def show
   end
 
@@ -23,7 +21,6 @@ class UserAddressesController < ApplicationController
 
 
   # POST /user_addresses
-  # POST /user_addresses.json
   def create
     puts params
     current_user_first_name = params["user_address"]["users"]["first_name"]
@@ -31,9 +28,6 @@ class UserAddressesController < ApplicationController
     current_user_img_url = params["user_address"]["users"]["img_url"]
     current_user_twitter_handle = params["user_address"]["users"]["twitter_handle"]
     user_address_address1 = params["user_address"]["address1"]
-    # puts user_address_ward_id = params["user_address"]["ward_id"]
-    # puts user_address_address2 = params["user_address"]["address2"]
-    # puts user_address_zip = params["user_address"]["zip"]
 
     if UserAddress.find_by_address1(user_address_address1)
       @user_address = UserAddress.find_by_address1(user_address_address1)
@@ -60,7 +54,6 @@ class UserAddressesController < ApplicationController
   end
 
   # PATCH/PUT /user_addresses/1
-  # PATCH/PUT /user_addresses/1.json
   def update
     respond_to do |format|
       if @user_address.update(user_address_params)
@@ -74,7 +67,6 @@ class UserAddressesController < ApplicationController
   end
 
   # DELETE /user_addresses/1
-  # DELETE /user_addresses/1.json
   def destroy
     @user_address.destroy
     respond_to do |format|

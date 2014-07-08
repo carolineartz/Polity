@@ -1,6 +1,5 @@
 class LegislationVoicesController < ApplicationController
   before_action :set_legislation_voice, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   def up
     @legislator = Legislator.find_by(alderman_id:current_user.alderman.id)

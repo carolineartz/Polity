@@ -3,13 +3,11 @@ class WardsController < ApplicationController
   before_action :authenticate_user!
 
   # GET /wards
-  # GET /wards.json
   def index
     @wards = Ward.all
   end
 
   # GET /wards/1
-  # GET /wards/1.json
   def show
     @community_meetings = @ward.community_meetings.order('date_at DESC').limit(10)
     @legislator_votes = @ward.legislator.legislator_votes
@@ -25,7 +23,6 @@ class WardsController < ApplicationController
   end
 
   # POST /wards
-  # POST /wards.json
   def create
     @ward = Ward.new(ward_params)
 
@@ -39,7 +36,6 @@ class WardsController < ApplicationController
   end
 
   # PATCH/PUT /wards/1
-  # PATCH/PUT /wards/1.json
   def update
     respond_to do |format|
       if @ward.update(ward_params)
@@ -51,7 +47,6 @@ class WardsController < ApplicationController
   end
 
   # DELETE /wards/1
-  # DELETE /wards/1.json
   def destroy
     @ward.destroy
     respond_to do |format|

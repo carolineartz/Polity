@@ -1,7 +1,6 @@
 class LegislationsController < ApplicationController
   before_action :set_legislation, only: [:show, :edit, :update, :destroy]
-  helper_method :sort_column, :sort_direction #TODOS: no longer using these but wnat to note how i did it
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   # GET /legislations
 
@@ -21,6 +20,7 @@ class LegislationsController < ApplicationController
   # GET /legislations/1/edit
   def edit
   end
+
 
   # POST /legislations
   def create
@@ -67,11 +67,4 @@ class LegislationsController < ApplicationController
       params.require(:legislation).permit(:city_identifier, :status, :type, :opened_date, :closed_date)
     end
 
-    def sort_column
-      Legislation.column_names.include?(params[:sort]) ? params[:sort] : "title"
-    end
-
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end
 end

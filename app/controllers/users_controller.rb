@@ -2,15 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-
   # GET /users
-  # GET /users.json
   def index
     @users = User.all
   end
 
   # GET /users/1
-  # GET /users/1.json
   def show
     @user = current_user
     @ward_number = @user.ward_number
@@ -35,22 +32,18 @@ class UsersController < ApplicationController
   end
 
   # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'Success! Welcome to Polity!' }
-
       else
         format.html { render :new }
-
       end
     end
   end
 
   # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
       if @user.update_attributes!(user_params)
@@ -63,7 +56,6 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
@@ -72,11 +64,8 @@ class UsersController < ApplicationController
   end
 
   private
-    #FOR NOW: redirects to homepage if user is also an alderman
-    #MUST CHANGE THIS BEHAVIOR IF WE ARE SIGNING IN AS ALDERMAN
 
-
-    # Use callbacks to share common setup or constraints between actions.
+    #Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
     end
@@ -86,9 +75,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :user_address_id, :img_url, :avatar, :twitter_handle)
     end
 
-    # def verify_community_user
-    #   redirect_to '/' if @user.alderman.alderman_id == @user.id
-    # end
 end
 
 

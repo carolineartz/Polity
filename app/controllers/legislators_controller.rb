@@ -1,6 +1,6 @@
 class LegislatorsController < ApplicationController
   before_action :set_legislator, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   include LegislatorsHelper
   # GET /legislators
