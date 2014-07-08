@@ -2,7 +2,6 @@
   <% if @legislation_sponsor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@legislation_sponsor.errors.count, "error") %> prohibited this legislation_sponsor from being saved:</h2>
-
       <ul>
       <% @legislation_sponsor.errors.full_messages.each do |message| %>
         <li><%= message %></li>

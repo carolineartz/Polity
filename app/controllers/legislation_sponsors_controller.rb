@@ -2,13 +2,11 @@ class LegislationSponsorsController < ApplicationController
   before_action :set_legislation_sponsor, only: [:show, :edit, :update, :destroy]
 
   # GET /legislation_sponsors
-  # GET /legislation_sponsors.json
   def index
     @legislation_sponsors = LegislationSponsor.all
   end
 
   # GET /legislation_sponsors/1
-  # GET /legislation_sponsors/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class LegislationSponsorsController < ApplicationController
   end
 
   # POST /legislation_sponsors
-  # POST /legislation_sponsors.json
   def create
     @legislation_sponsor = LegislationSponsor.new(legislation_sponsor_params)
 
@@ -38,7 +35,6 @@ class LegislationSponsorsController < ApplicationController
   end
 
   # PATCH/PUT /legislation_sponsors/1
-  # PATCH/PUT /legislation_sponsors/1.json
   def update
     respond_to do |format|
       if @legislation_sponsor.update(legislation_sponsor_params)
@@ -52,7 +48,6 @@ class LegislationSponsorsController < ApplicationController
   end
 
   # DELETE /legislation_sponsors/1
-  # DELETE /legislation_sponsors/1.json
   def destroy
     @legislation_sponsor.destroy
     respond_to do |format|

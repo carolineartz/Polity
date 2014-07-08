@@ -21,9 +21,8 @@
         <div class="legislation-content">
            <%= @user_feedback.title %>
         </div>
-        <div class="vote"><%= link_to "", legislation_voices_up_path(@user_feedback.id), method: "post", id: "vote-up", remote: true, "data-type" => "json" %>
-        <%= link_to "", legislation_voices_down_path(@user_feedback.id), method: "post", id: "vote-down", remote: true, "data-type" => "json" %>
-        </div>
+          <div class="support"><%= image_tag "icons/like.svg", :style => "width: 25px", class: "voice#{@user_feedback.id}", alt: "support"%></div>
+          <div class="oppose"><%= image_tag "icons/like.svg", :style => "width: 25px", class: "voice#{@user_feedback.id}", alt: "oppose"%></div>
         <div class="alderman-position">
           Your Alderman voted <%= @legislator.issue_vote(@user_feedback.id) %>
         </div>

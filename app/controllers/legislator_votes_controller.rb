@@ -2,13 +2,11 @@ class LegislatorVotesController < ApplicationController
   before_action :set_legislator_vote, only: [:show, :edit, :update, :destroy]
 
   # GET /legislator_votes
-  # GET /legislator_votes.json
   def index
     @legislator_votes = LegislatorVote.all
   end
 
   # GET /legislator_votes/1
-  # GET /legislator_votes/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class LegislatorVotesController < ApplicationController
   end
 
   # POST /legislator_votes
-  # POST /legislator_votes.json
   def create
     @legislator_vote = LegislatorVote.new(legislator_vote_params)
 
@@ -38,7 +35,6 @@ class LegislatorVotesController < ApplicationController
   end
 
   # PATCH/PUT /legislator_votes/1
-  # PATCH/PUT /legislator_votes/1.json
   def update
     respond_to do |format|
       if @legislator_vote.update(legislator_vote_params)
@@ -52,7 +48,6 @@ class LegislatorVotesController < ApplicationController
   end
 
   # DELETE /legislator_votes/1
-  # DELETE /legislator_votes/1.json
   def destroy
     @legislator_vote.destroy
     respond_to do |format|
